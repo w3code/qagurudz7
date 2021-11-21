@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'io.github.w3code'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    testImplementation(
+            "com.codeborne:selenide:5.25.0",
+            "org.junit.jupiter:junit-jupiter:5.8.1")
+    testRuntimeOnly(
+            "org.junit.jupiter:junit-jupiter-engine:5.8.1",
+            'org.slf4j:slf4j-simple:1.7.32')
+}
+
+test {
+    useJUnitPlatform()
+}
